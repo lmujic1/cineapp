@@ -1,9 +1,11 @@
-HELP.md
-target/
+# Maven wrapper
+.mvn/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
+# Compiled source #
+**/target/
+
+# Files for the Java IDEs #
 ### STS ###
 .apt_generated
 .classpath
@@ -31,3 +33,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Git Attributes File ###
+.gitattributes
