@@ -68,8 +68,8 @@ public class PasswordResetService {
     return emailService.sendEmail(
         new EmailRequest(
             user.getEmail(),
-            "Cinebh reset password code",
-            "Hi "+user.getFirstName()+" "+user.getLastName()+", \n\nYour reset code is: "+passwordReset.getResetCode()+". \nYour code will expire after 5 minutes.\n\n If you don't want to change your password, just ignore this message.\n -The Cinebh Team"));
+            "Cineapp reset password code",
+            "Hi "+user.getFirstName()+" "+user.getLastName()+", \n\nYour reset code is: "+passwordReset.getResetCode()+". \nYour code will expire after 5 minutes.\n\n If you don't want to change your password, just ignore this message.\n -The Cineapp Team"));
   }
 
   private String generateResetCode() {

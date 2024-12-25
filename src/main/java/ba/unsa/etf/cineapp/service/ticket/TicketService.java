@@ -66,7 +66,7 @@ public class TicketService {
             "Hi " + ticket.getUser().getFirstName() + " " + ticket.getUser().getLastName() + ", \n\nWe are pleased to confirm your payment for the following details:\n\n" +
             ticketDetails +
             "\n\nThank you for choosing us, we look forward to providing you with an enjoyable movie experience.\n" +
-            "\n -The Cinebh Team"));
+            "\n -The Cineapp Team"));
   }
 
   public String cancelReservation(final Ticket ticket){
@@ -114,7 +114,7 @@ public class TicketService {
           ticketDetails +
           "\n\nPlease note that your ticket will expire if the tickets are not purchased at least one hour before the showtime. \nTo ensure your seats are secured, we recommend completing your purchase well in advance." +
           "\n\nThank you for choosing us, we look forward to providing you with an enjoyable movie experience.\n" +
-          "\n -The Cinebh Team"));
+          "\n -The Cineapp Team"));
     } else {
       return emailService.sendEmail(new EmailRequest(
           user.getEmail(),
@@ -122,7 +122,7 @@ public class TicketService {
           "Hi " + user.getFirstName() + " " + user.getLastName() + ", \n\nWe are pleased to confirm your payment for the following details:\n\n" +
           ticketDetails +
           "\n\nThank you for choosing us, we look forward to providing you with an enjoyable movie experience.\n" +
-          "\n -The Cinebh Team"));
+          "\n -The Cineapp Team"));
     }
   }
 
