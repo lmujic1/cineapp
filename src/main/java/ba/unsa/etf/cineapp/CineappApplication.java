@@ -26,9 +26,10 @@ public class CineappApplication implements CommandLineRunner {
     User adminAccount = userRepository.findByRole(Role.SUPERADMIN);
     if(adminAccount == null) {
       User user = new User();
-      user.setEmail("lejlamujic998@gmail.com");
-      user.setFirstName("Lejla");
-      user.setLastName("Mujic");
+      user.setEmail("s.cineapp.20@gmail.com");
+      user.setFirstName("Super Admin");
+      user.setLastName("Cineapp");
+      user.setPhone("0603330227");
       user.setRole(Role.SUPERADMIN);
       user.setPassword(new BCryptPasswordEncoder().encode("admin"));
       userRepository.save(user);
