@@ -79,14 +79,12 @@ public class SuperAdminController {
             "Dear " + user.getFirstName() + " " + user.getLastName() + ",\n\n" +
             "Congratulations! You have been added as a new administrator for Cineapp by our superadmin. Below is your initial password which you will use to access your admin account for the first time:\n\n" +
             "**Password: " + password + "**\n\n" + // Include the generated password
-            "For security purposes, please ensure to change this password immediately after your first login. You can do this by visiting your account settings or clicking the following link to set a new password of your choice:\n" +
-            resetLink + "\n\n" + // Include a link to reset the password
-            "Please note, for security reasons, it is recommended to change this password immediately upon login. The above link will remain active for 24 hours. If you do not change your password within this timeframe, you will need to request a new link from your superadmin.\n\n" +
-            "If you have any questions or require further assistance, please do not hesitate to contact our support team at lejladevmujic@gmail.com.\n\n" +
+            "For security purposes, please ensure to change this password immediately after your first login. You can do this by visiting your account settings\n\n" + // Include a link to reset the password
+            "If you have any questions or require further assistance, please do not hesitate to contact our support team at s.cineapp.20@gmail.com.\n\n" +
             "Thank you for your attention, and we look forward to a successful collaboration.\n\n" +
             "Warm regards,\n\n" +
             "Cineapp Support Team\n" +
-            "lejladevmujic@gmail.com"
+            "s.cineapp.20@gmail.com"
         )
     );
 
