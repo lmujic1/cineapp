@@ -24,7 +24,7 @@ public class CineappApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     User adminAccount = userRepository.findByRole(Role.SUPERADMIN);
-    if(adminAccount == null) {
+    if (adminAccount == null) {
       User user = new User();
       user.setEmail("s.cineapp.20@gmail.com");
       user.setFirstName("Super Admin");

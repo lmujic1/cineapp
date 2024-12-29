@@ -1,14 +1,18 @@
 package ba.unsa.etf.cineapp.controller.auth;
 
+import ba.unsa.etf.cineapp.config.CustomLogoutHandler;
 import ba.unsa.etf.cineapp.dto.request.auth.RefreshTokenRequest;
 import ba.unsa.etf.cineapp.dto.request.auth.SignInRequest;
 import ba.unsa.etf.cineapp.dto.request.auth.SignUpRequest;
 import ba.unsa.etf.cineapp.dto.response.JWTAuthenticationResponse;
 import ba.unsa.etf.cineapp.model.auth.User;
 import ba.unsa.etf.cineapp.service.auth.AuthenticationService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 
   private final AuthenticationService authenticationService;
+
+  private final CustomLogoutHandler logoutHandler; // Dodano
 
   @PostMapping("/sign-up")
   public ResponseEntity<User> signup(@RequestBody SignUpRequest signUpRequest) {
@@ -37,6 +43,17 @@ public class AuthenticationController {
     }
     return ResponseEntity.ok(response);
   }
+
+  @PostMapping("/logout")
+  public ResponseEntity<Void> logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+    try {
+      logoutHandler.logout(request, response, authentication);
+      return ResponseEntity.ok().build();
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+  }
+
 
   @PostMapping("/refresh")
   public ResponseEntity<JWTAuthenticationResponse> refresh(@RequestBody RefreshTokenRequest refreshTokenRequest) {
